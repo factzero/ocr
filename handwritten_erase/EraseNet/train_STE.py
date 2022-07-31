@@ -80,4 +80,4 @@ for i in range(1, args.num_epochs + 1):
 
         print('[{}/{}] Generator Loss of epoch{} is {}'.format(k, len(Erase_data), i, G_loss.item()))
     
-    torch.save(netG.state_dict(), args.modelsSavePath + '/STE_{}_{}.pth'.format(i, loss))
+    torch.save(netG.state_dict(), os.path.join(args.modelsSavePath, '/STE_{}_{}.pth'.format(i, loss)))
