@@ -76,8 +76,8 @@ for i in range(1, args.num_epochs + 1):
         G_optimizer.zero_grad()
         G_loss.backward()
         G_optimizer.step()
-        loss = G_loss.item()      
+        loss = G_loss.item()
 
         print('[{}/{}] Generator Loss of epoch{} is {}'.format(k, len(Erase_data), i, G_loss.item()))
     
-    torch.save(netG.state_dict(), os.path.join(args.modelsSavePath, '/STE_{}_{}.pth'.format(i, loss)))
+    torch.save(netG.state_dict(), os.path.join(args.modelsSavePath, 'STE_{}_{}.pth'.format(i, loss)))
