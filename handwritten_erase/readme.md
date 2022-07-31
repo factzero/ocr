@@ -4,7 +4,7 @@
 
 ### 1、[百度网盘AI大赛：手写文字擦除(赛题二)](https://aistudio.baidu.com/aistudio/competition/detail/129/0/task-definition)
 
-+ [数据集](https://github.com/Helen-Cheung/Baidu-AI-Challenge-Scene-Text-Removal)
++ [数据集](https://github.com/Helen-Cheung/Baidu-AI-Challenge-Scene-Text-Removal) [mask](https://aistudio.baidu.com/aistudio/datasetdetail/122013)
 
 + [手写文字擦除第1名方案](https://aistudio.baidu.com/aistudio/projectdetail/3439691?channelType=0&channel=0)
 
@@ -13,3 +13,5 @@
 + [手写文字擦除第5名方案](https://aistudio.baidu.com/aistudio/projectdetail/3481217)
 
 + [手写文字擦除第8名方案](https://zhuanlan.zhihu.com/p/466619848)
+
++ [百度网盘AI大赛——通用场景手写文字擦除BaseLine](https://aistudio.baidu.com/aistudio/projectdetail/4282393)
