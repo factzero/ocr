@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import os
 import argparse
 import torch
@@ -58,11 +59,9 @@ if cuda:
     netG = netG.cuda()
     criterion = criterion.cuda()
 
-print('OK!')
-num_epochs = args.num_epochs
-
-for i in range(1, num_epochs + 1):
+for i in range(1, args.num_epochs + 1):
     netG.train()
+    loss = 0
 
     for k,(imgs, gt, masks, path) in enumerate(Erase_data):
         if cuda:
@@ -76,9 +75,9 @@ for i in range(1, num_epochs + 1):
         G_loss = G_loss.sum()
         G_optimizer.zero_grad()
         G_loss.backward()
-        G_optimizer.step()       
+        G_optimizer.step()
+        loss = G_loss.item()      
 
         print('[{}/{}] Generator Loss of epoch{} is {}'.format(k, len(Erase_data), i, G_loss.item()))
     
-    if ( i % 10 == 0):
-        torch.save(netG.state_dict(), args.modelsSavePath + '/STE_{}.pth'.format(i))
+    torch.save(netG.state_dict(), args.modelsSavePath + '/STE_{}_{}.pth'.format(i, loss))
